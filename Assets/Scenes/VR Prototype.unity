@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0.99999905, b: 0.99999905, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1128,7 +1128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8281684036163973933, guid: 7ae644ebd94982b47b7366da26c0ad65, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.9
+      value: 2.92
       objectReference: {fileID: 0}
     - target: {fileID: 8281684036163973933, guid: 7ae644ebd94982b47b7366da26c0ad65, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1158,6 +1158,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.744
       objectReference: {fileID: 0}
+    - target: {fileID: 9145361284459399049, guid: 7ae644ebd94982b47b7366da26c0ad65, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a07b4e0eff4e6af4a91ecf576bf92b25, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ae644ebd94982b47b7366da26c0ad65, type: 3}
 --- !u!1 &1078016954 stripped
@@ -2449,7 +2453,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1865644629
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2620,7 +2624,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1909999982
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3508,6 +3512,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5784621681306307258, guid: d733ca7303c1b974a89a943c3643ccf3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6575306793672154311, guid: d733ca7303c1b974a89a943c3643ccf3, type: 3}
       propertyPath: m_InteractionManager
       value: 
@@ -4388,6 +4396,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3584546922537577774, guid: fc8296949493ad841b5ba274d786627f, type: 3}
+      propertyPath: m_HitClosestOnly
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584546922537577774, guid: fc8296949493ad841b5ba274d786627f, type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1800309242}
@@ -4403,6 +4415,10 @@ PrefabInstance:
       propertyPath: m_KeepSelectedTargetValid
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4863191636397935930, guid: fc8296949493ad841b5ba274d786627f, type: 3}
+      propertyPath: m_OverrideInteractorLineLength
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4989122274261041677, guid: fc8296949493ad841b5ba274d786627f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -4411,6 +4427,10 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1800309242}
+    - target: {fileID: 7115081032002085691, guid: fc8296949493ad841b5ba274d786627f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7286162389949317280, guid: fc8296949493ad841b5ba274d786627f, type: 3}
       propertyPath: m_InteractionManager
       value: 
@@ -4419,6 +4439,14 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1800309242}
+    - target: {fileID: 7677213200329999920, guid: fc8296949493ad841b5ba274d786627f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a07b4e0eff4e6af4a91ecf576bf92b25, type: 2}
+    - target: {fileID: 7677213200329999920, guid: fc8296949493ad841b5ba274d786627f, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 8495506031359688337, guid: fc8296949493ad841b5ba274d786627f, type: 3}
       propertyPath: teleportGameObject
       value: 
