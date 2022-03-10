@@ -39,7 +39,7 @@ public class ColorSlider : MonoBehaviour
 
     public void ColorSave()
     {
-        var objectColor = GetComponent<MeshRenderer>().material.color;
-        objectColor = color;
+        localColor = myObject.GetComponent<MeshRenderer>().material.color;
+     
     }
 }
