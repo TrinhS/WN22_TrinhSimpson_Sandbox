@@ -105,6 +105,9 @@ ModelImporter:
   - first:
       74: -6847092398563475026
     second: Stun
+  - first:
+      74: 5917537482288442099
+    second: Fall
   externalObjects: {}
   materials:
     materialImportMode: 2
