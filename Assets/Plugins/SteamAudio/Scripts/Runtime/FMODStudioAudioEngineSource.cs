@@ -47,7 +47,9 @@ namespace SteamAudio
         {
             FindDSP(source.gameObject);
             if (!mFoundDSP)
+            {
                 return;
+            }
 
             var ptr = source.GetSource().Get();
 
@@ -81,17 +83,23 @@ namespace SteamAudio
         void FindDSP(GameObject gameObject)
         {
             if (mFoundDSP)
+            {
                 return;
+            }
 
             BindToFMODStudioPlugin();
 
             var eventEmitter = gameObject.GetComponent(FMODUnity_StudioEventEmitter) as object;
             if (eventEmitter == null)
+            {
                 return;
+            }
 
             var eventInstance = FMODUnity_StudioEventEmitter_EventInstance.GetValue(eventEmitter, null);
             if (!((bool)FMOD_Studio_EventInstance_isValid.Invoke(eventInstance, null)))
+            {
                 return;
+            }
 
             var channelGroup = Activator.CreateInstance(FMOD_ChannelGroup);
 
@@ -130,7 +138,9 @@ namespace SteamAudio
         static void BindToFMODStudioPlugin()
         {
             if (mBoundToPlugin)
+            {
                 return;
+            }
 
             var assemblySuffix = ",FMODUnity";
 

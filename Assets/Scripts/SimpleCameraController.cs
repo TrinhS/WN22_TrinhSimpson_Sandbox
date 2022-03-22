@@ -189,8 +189,10 @@ namespace UnityTemplateProjects
             {
                 var mouseMovement = GetInputLookRotation() * Time.deltaTime * 5;
                 if (invertY)
+                {
                     mouseMovement.y = -mouseMovement.y;
-                
+                }
+
                 var mouseSensitivityFactor = mouseSensitivityCurve.Evaluate(mouseMovement.magnitude);
 
                 m_TargetCameraState.yaw += mouseMovement.x * mouseSensitivityFactor;

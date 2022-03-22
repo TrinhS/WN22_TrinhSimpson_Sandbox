@@ -158,7 +158,9 @@ namespace SteamAudio
                 foreach (var probeBatch in mProbeBatchesUsed)
                 {
                     if (probeBatch == null)
+                    {
                         continue;
+                    }
 
                     Gizmos.matrix = probeBatch.transform.localToWorldMatrix;
                     Gizmos.DrawWireCube(new UnityEngine.Vector3(0, 0, 0), new UnityEngine.Vector3(1, 1, 1));
@@ -172,7 +174,9 @@ namespace SteamAudio
         public void UpdateBakedDataStatistics()
         {
             if (mProbeBatchesUsed == null)
+            {
                 return;
+            }
 
             mProbeDataSizes = new int[mProbeBatchesUsed.Length];
             mTotalDataSize = 0;

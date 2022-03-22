@@ -25,9 +25,14 @@ public class PhysicsButton : MonoBehaviour
     void Update()
     {
         if (!_isPressed && GetValue() + threshold >= 1)
+        {
             Pressed();
+        }
+
         if (_isPressed && GetValue() - threshold <= 0)
+        {
             Released();
+        }
     }
 
     private float GetValue()
@@ -35,7 +40,9 @@ public class PhysicsButton : MonoBehaviour
         var value = Vector3.Distance(_startPos, transform.localPosition) / _joint.linearLimit.limit;
 
         if (Mathf.Abs(value) < deadZone)
+        {
             value = 0;
+        }
 
         return Mathf.Clamp(value, -1f, 1f);
     }

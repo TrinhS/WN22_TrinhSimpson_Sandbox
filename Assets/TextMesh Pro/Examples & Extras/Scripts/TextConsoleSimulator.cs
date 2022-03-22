@@ -97,11 +97,17 @@ namespace TMPro.Examples
 
                 // Get last character index for the current word.
                 if (currentWord == 0) // Display no words.
+                {
                     visibleCount = 0;
+                }
                 else if (currentWord < totalWordCount) // Display all other words with the exception of the last one.
+                {
                     visibleCount = textComponent.textInfo.wordInfo[currentWord - 1].lastCharacterIndex + 1;
+                }
                 else if (currentWord == totalWordCount) // Display last word and all remaining characters.
+                {
                     visibleCount = totalVisibleCharacters;
+                }
 
                 textComponent.maxVisibleCharacters = visibleCount; // How many characters should TextMeshPro display?
 

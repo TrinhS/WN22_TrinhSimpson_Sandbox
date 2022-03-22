@@ -70,7 +70,9 @@ namespace SteamAudio
         private void Awake()
         {
             if (asset == null)
+            {
                 return;
+            }
 
             mProbeBatch = new ProbeBatch(SteamAudioManager.Context, asset);
             mProbeBatch.Commit();
@@ -123,7 +125,9 @@ namespace SteamAudio
             {
                 staticMeshComponent = rootObject.GetComponent<SteamAudioStaticMesh>();
                 if (staticMeshComponent)
+                {
                     break;
+                }
             }
 
             if (staticMeshComponent == null || staticMeshComponent.asset == null)
@@ -175,7 +179,9 @@ namespace SteamAudio
         public void DeleteBakedDataForIdentifier(BakedDataIdentifier identifier)
         {
             if (asset == null)
+            {
                 return;
+            }
 
             SteamAudioManager.Initialize(ManagerInitReason.EditingProbes);
 

@@ -334,15 +334,29 @@ namespace SteamAudio
 
             inputs.directFlags = 0;
             if (distanceAttenuation)
+            {
                 inputs.directFlags = inputs.directFlags | DirectSimulationFlags.DistanceAttenuation;
+            }
+
             if (airAbsorption)
+            {
                 inputs.directFlags = inputs.directFlags | DirectSimulationFlags.AirAbsorption;
+            }
+
             if (directivity)
+            {
                 inputs.directFlags = inputs.directFlags | DirectSimulationFlags.Directivity;
+            }
+
             if (occlusion)
+            {
                 inputs.directFlags = inputs.directFlags | DirectSimulationFlags.Occlusion;
+            }
+
             if (transmission)
+            {
                 inputs.directFlags = inputs.directFlags | DirectSimulationFlags.Transmission;
+            }
 
             mSource.SetInputs(flags, inputs);
         }
@@ -486,19 +500,31 @@ namespace SteamAudio
             {
                 case AudioRolloffMode.Logarithmic:
                     if (distance < rMin)
+                    {
                         return 1.0f;
+                    }
                     else if (distance < rMax)
+                    {
                         return 0.0f;
+                    }
                     else
+                    {
                         return rMin / distance;
-                
+                    }
+
                 case AudioRolloffMode.Linear:
                     if (distance < rMin)
+                    {
                         return 1.0f;
+                    }
                     else if (distance > rMax)
+                    {
                         return 0.0f;
+                    }
                     else
+                    {
                         return (rMax - distance) / (rMax - rMin);
+                    }
 
                 case AudioRolloffMode.Custom:
 #if UNITY_2018_1_OR_NEWER

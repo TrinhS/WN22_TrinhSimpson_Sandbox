@@ -22,7 +22,9 @@ namespace SteamAudio
 
             var status = API.iplContextCreate(ref contextSettings, out mContext);
             if (status != Error.Success)
+            {
                 throw new Exception(string.Format("Unable to create context. [{0}]", status));
+            }
         }
 
         public Context(Context context)

@@ -44,7 +44,9 @@ namespace TMPro.Examples
         void ON_TEXT_CHANGED(Object obj)
         {
             if (obj == m_TextComponent)
+            {
                 hasTextChanged = true;
+            }
         }
 
         /// <summary>
@@ -99,7 +101,9 @@ namespace TMPro.Examples
 
                     // Skip characters that are not visible and thus have no geometry to manipulate.
                     if (!charInfo.isVisible)
+                    {
                         continue;
+                    }
 
                     // Get the index of the material used by the current character.
                     int materialIndex = textInfo.characterInfo[i].materialReferenceIndex;

@@ -110,7 +110,9 @@ namespace SteamAudio
         public static void FlushAllWrites()
         {
             if (sAssetsToFlush == null)
+            {
                 return;
+            }
 
             foreach (var dataAsset in sAssetsToFlush)
             {

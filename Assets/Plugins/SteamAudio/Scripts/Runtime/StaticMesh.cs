@@ -70,7 +70,9 @@ namespace SteamAudio
 
             var status = API.iplStaticMeshLoad(scene.Get(), serializedObject.Get(), null, IntPtr.Zero, out mStaticMesh);
             if (status != Error.Success)
+            {
                 throw new Exception(string.Format("Unable to load static mesh ({0}). [{1}]", dataAsset.name, status));
+            }
         }
 
         public StaticMesh(StaticMesh staticMesh)

@@ -63,7 +63,9 @@ namespace SteamAudio
             {
                 staticMeshComponent = rootObject.GetComponent<SteamAudioStaticMesh>();
                 if (staticMeshComponent)
+                {
                     break;
+                }
             }
 
             if (staticMeshComponent == null || staticMeshComponent.asset == null)
@@ -140,7 +142,9 @@ namespace SteamAudio
         {
 #if UNITY_EDITOR
             if (sStatus != BakeStatus.InProgress)
+            {
                 return false;
+            }
 
             var progress = sProgress + .01f; // Adding an offset because progress bar when it is exact 0 has some non-zero progress.
             var progressPercent = Mathf.FloorToInt(Mathf.Min(progress * 100.0f, 100.0f));
@@ -218,7 +222,9 @@ namespace SteamAudio
                     sCurrentProbeBatchIndex = j;
 
                     if (sCancel)
+                    {
                         return;
+                    }
 
                     if (probeBatches[j] == null)
                     {
@@ -256,10 +262,14 @@ namespace SteamAudio
                         bakeParams.bakeBatchSize = 1;
 
                         if (SteamAudioSettings.Singleton.bakeConvolution)
+                        {
                             bakeParams.flags = bakeParams.flags | ReflectionsBakeFlags.BakeConvolution;
+                        }
 
                         if (SteamAudioSettings.Singleton.bakeParametric)
+                        {
                             bakeParams.flags = bakeParams.flags | ReflectionsBakeFlags.BakeParametric;
+                        }
 
                         if (simulationSettings.sceneType == SceneType.RadeonRays)
                         {

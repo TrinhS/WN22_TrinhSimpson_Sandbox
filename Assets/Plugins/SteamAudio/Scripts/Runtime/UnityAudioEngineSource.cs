@@ -21,7 +21,9 @@ namespace SteamAudio
         public override void UpdateParameters(SteamAudioSource source)
         {
             if (!mAudioSource)
+            {
                 return;
+            }
 
             var index = 0;
             mAudioSource.SetSpatializerFloat(index++, (source.distanceAttenuation) ? 1.0f : 0.0f);

@@ -76,7 +76,9 @@ namespace SteamAudio
         static void BindToFMODStudioPlugin()
         {
             if (mBoundToPlugin)
+            {
                 return;
+            }
 
             var assemblySuffix = ",FMODUnity";
 

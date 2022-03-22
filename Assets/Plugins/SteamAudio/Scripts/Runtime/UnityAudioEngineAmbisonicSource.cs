@@ -20,7 +20,9 @@ namespace SteamAudio
         public override void UpdateParameters(SteamAudioAmbisonicSource ambisonicSource)
         {
             if (!mAudioSource)
+            {
                 return;
+            }
 
             var index = 0;
             mAudioSource.SetAmbisonicDecoderFloat(index++, (ambisonicSource.applyHRTF) ? 1.0f : 0.0f);

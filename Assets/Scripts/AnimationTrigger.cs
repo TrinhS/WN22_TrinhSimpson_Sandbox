@@ -14,7 +14,10 @@ public class AnimationTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P)) SwitchAnimation();
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SwitchAnimation();
+        }
     }
 
     public void SwitchAnimation()
@@ -23,6 +26,9 @@ public class AnimationTrigger : MonoBehaviour
         {
             animator.SetBool("Toggle", true);
         }
-        else animator.SetBool("Toggle", false);
+        else
+        {
+            animator.SetBool("Toggle", false);
+        }
     }
 }

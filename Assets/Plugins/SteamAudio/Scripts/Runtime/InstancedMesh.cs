@@ -20,7 +20,9 @@ namespace SteamAudio
 
             var status = API.iplInstancedMeshCreate(scene.Get(), ref instancedMeshSettings, out mInstancedMesh);
             if (status != Error.Success)
+            {
                 throw new Exception(string.Format("Unable to create instanced mesh ({0}). [{1}]", transform.gameObject.name, status));
+            }
         }
 
         public InstancedMesh(InstancedMesh instancedMesh)

@@ -153,7 +153,9 @@ namespace SteamAudio
         public static SteamAudioListener GetSteamAudioListener()
         {
             if (sSingleton.mListenerComponent == null)
+            {
                 return null;
+            }
 
             return sSingleton.mListenerComponent;
         }
@@ -316,9 +318,14 @@ namespace SteamAudio
 
                         var warningMessage = "OpenCL initialization failed.";
                         if (SteamAudioSettings.Singleton.sceneType == SceneType.RadeonRays)
+                        {
                             warningMessage += " Reverting to Phonon for ray tracing.";
+                        }
+
                         if (SteamAudioSettings.Singleton.reflectionEffectType == ReflectionEffectType.TrueAudioNext)
+                        {
                             warningMessage += " Reverting to Convolution for reflection effect processing.";
+                        }
 
                         Debug.LogWarning(warningMessage);
                     }
@@ -409,12 +416,16 @@ namespace SteamAudio
         private void LateUpdate()
         {
             if (mAudioEngineState == null)
+            {
                 return;
+            }
 
             mAudioEngineState.SetHRTF(CurrentHRTF.Get());
 
             if (mCurrentScene == null || mSimulator == null)
+            {
                 return;
+            }
 
             if (mSimulationThread.ThreadState == ThreadState.WaitSleepJoin)
             {
@@ -466,7 +477,9 @@ namespace SteamAudio
 
             mSimulationUpdateTimeElapsed += Time.deltaTime;
             if (mSimulationUpdateTimeElapsed < SteamAudioSettings.Singleton.simulationUpdateInterval)
+            {
                 return;
+            }
 
             mSimulationUpdateTimeElapsed = 0.0f;
 
@@ -516,7 +529,9 @@ namespace SteamAudio
         void RunSimulationInternal()
         {
             if (mSimulator == null)
+            {
                 return;
+            }
 
             mSimulator.RunReflections();
             mSimulator.RunPathing();
@@ -536,7 +551,9 @@ namespace SteamAudio
                 { }
 
                 if (mStopSimulationThread)
+                {
                     break;
+                }
 
                 RunSimulationInternal();
             }
@@ -654,9 +671,14 @@ namespace SteamAudio
 
                     var warningMessage = "OpenCL initialization failed.";
                     if (SteamAudioSettings.Singleton.sceneType == SceneType.RadeonRays)
+                    {
                         warningMessage += " Reverting to Phonon for ray tracing.";
+                    }
+
                     if (SteamAudioSettings.Singleton.reflectionEffectType == ReflectionEffectType.TrueAudioNext)
+                    {
                         warningMessage += " Reverting to Convolution for reflection effect processing.";
+                    }
 
                     Debug.LogWarning(warningMessage);
                 }
@@ -1034,13 +1056,17 @@ namespace SteamAudio
             var gameObjects = new List<GameObject>();
 
             if (exportingStaticObjects && root.GetComponentInParent<SteamAudioDynamicObject>() != null)
+            {
                 return new List<GameObject>();
+            }
 
             var geometries = root.GetComponentsInChildren<SteamAudioGeometry>();
             foreach (var geometry in geometries)
             {
                 if (IsDynamicSubObject(root, geometry.gameObject))
+                {
                     continue;
+                }
 
                 if (geometry.exportAllChildren)
                 {
@@ -1232,10 +1258,14 @@ namespace SteamAudio
             var objFileName = (exportOBJ) ? GetOBJFileName(unityScene) : "";
 
             if (!exportOBJ && dataAsset == null)
+            {
                 return;
+            }
 
             if (exportOBJ && (objFileName == null || objFileName.Length == 0))
+            {
                 return;
+            }
 
             Export(objects, unityScene.name, dataAsset, objFileName, false, exportOBJ);
         }
@@ -1392,7 +1422,9 @@ namespace SteamAudio
         static bool IsActiveInHierarchy(Transform obj)
         {
             if (obj == null)
+            {
                 return true;
+            }
 
             return (obj.gameObject.activeSelf && IsActiveInHierarchy(obj.parent));
         }
@@ -1458,11 +1490,15 @@ namespace SteamAudio
         static SteamAudioDynamicObject GetDynamicObjectInParent(Transform obj)
         {
             if (obj == null)
+            {
                 return null;
+            }
 
             var dynamicObject = obj.gameObject.GetComponent<SteamAudioDynamicObject>();
             if (dynamicObject != null)
+            {
                 return dynamicObject;
+            }
 
             return GetDynamicObjectInParent(obj.parent);
         }
@@ -1708,7 +1744,9 @@ namespace SteamAudio
             {
                 steamAudioStaticMesh = rootObject.GetComponentInChildren<SteamAudioStaticMesh>();
                 if (steamAudioStaticMesh != null)
+                {
                     break;
+                }
             }
 
             if (steamAudioStaticMesh == null)

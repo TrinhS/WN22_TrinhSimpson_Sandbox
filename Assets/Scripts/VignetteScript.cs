@@ -25,7 +25,9 @@ public class VignetteScript : MonoBehaviour
         continuousMove.action.canceled += FadeOut;
 
         if (volume.profile.TryGet(out Vignette vignette))
+        {
             this.vignette = vignette;
+        }
     }
 
     private void FadeOut(InputAction.CallbackContext obj)

@@ -17,7 +17,9 @@ namespace SteamAudio
 
             var status = API.iplEmbreeDeviceCreate(context.Get(), ref embreeDeviceSettings, out mEmbreeDevice);
             if (status != Error.Success)
+            {
                 throw new Exception(string.Format("Unable to create Embree device. [{0}]", status));
+            }
         }
 
         public EmbreeDevice(EmbreeDevice embreeDevice)

@@ -77,7 +77,10 @@ namespace TMPro.Examples
                 int characterCount = textInfo.characterCount;
 
 
-                if (characterCount == 0) continue;
+                if (characterCount == 0)
+                {
+                    continue;
+                }
 
                 //vertices = textInfo.meshInfo[0].vertices;
                 //int lastVertexIndex = textInfo.characterInfo[characterCount - 1].vertexIndex;
@@ -90,7 +93,9 @@ namespace TMPro.Examples
                 for (int i = 0; i < characterCount; i++)
                 {
                     if (!textInfo.characterInfo[i].isVisible)
+                    {
                         continue;
+                    }
 
                     int vertexIndex = textInfo.characterInfo[i].vertexIndex;
 

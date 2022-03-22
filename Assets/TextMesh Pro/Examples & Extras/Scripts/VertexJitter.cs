@@ -51,7 +51,9 @@ namespace TMPro.Examples
         void ON_TEXT_CHANGED(Object obj)
         {
             if (obj == m_TextComponent)
+            {
                 hasTextChanged = true;
+            }
         }
 
         /// <summary>
@@ -110,7 +112,9 @@ namespace TMPro.Examples
 
                     // Skip characters that are not visible and thus have no geometry to manipulate.
                     if (!charInfo.isVisible)
+                    {
                         continue;
+                    }
 
                     // Retrieve the pre-computed animation data for the given character.
                     VertexAnim vertAnim = vertexAnim[i];

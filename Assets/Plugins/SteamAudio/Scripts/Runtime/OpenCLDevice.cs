@@ -24,7 +24,9 @@ namespace SteamAudio
             var deviceList = IntPtr.Zero;
             var status = API.iplOpenCLDeviceListCreate(context.Get(), ref deviceSettings, out deviceList);
             if (status != Error.Success)
+            {
                 throw new Exception(string.Format("Unable to enumerate OpenCL devices. [{0}]", status));
+            }
 
             var numDevices = API.iplOpenCLDeviceListGetNumDevices(deviceList);
             if (numDevices <= 0)
@@ -34,7 +36,9 @@ namespace SteamAudio
                 // If we explicitly requested a device that supports TAN, or if we didn't ask for CU
                 // reservation, but still didn't find any devices, stop.
                 if (requiresTAN || numCUsToReserve == 0)
+                {
                     throw new Exception(string.Format("No OpenCL devices found."));
+                }
 
                 Debug.LogWarning("No OpenCL devices found that match the provided parameters, attempting to " +
                     "initialize without CU reservation.");
@@ -43,11 +47,15 @@ namespace SteamAudio
                 deviceSettings.fractionCUsForIRUpdate = 0.0f;
                 status = API.iplOpenCLDeviceListCreate(context.Get(), ref deviceSettings, out deviceList);
                 if (status != Error.Success)
+                {
                     throw new Exception(string.Format("Unable to enumerate OpenCL devices. [{0}]", status));
+                }
 
                 numDevices = API.iplOpenCLDeviceListGetNumDevices(deviceList);
                 if (numDevices <= 0)
+                {
                     throw new Exception(string.Format("No OpenCL devices found."));
+                }
             }
 
             status = API.iplOpenCLDeviceCreate(context.Get(), deviceList, 0, out mOpenCLDevice);
