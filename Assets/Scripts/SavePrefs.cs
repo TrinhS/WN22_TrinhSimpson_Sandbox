@@ -38,7 +38,6 @@ public class SavePrefs : MonoBehaviour
                 ui.intToSave = PlayerPrefs.GetInt("SavedInteger");
                 ui.floatToSave = PlayerPrefs.GetFloat("SavedFloat");
                 ui.stringToSave = PlayerPrefs.GetString("SavedString");
-
                 ui.dataText.text = "Hello" + ui.stringToSave + ". Your integer was " + ui.intToSave.ToString() + "and your float was " + ui.floatToSave.ToString();
                 ui.intSlider.value = (float)ui.intToSave;
                 ui.floatSlider.value = ui.floatToSave;
@@ -58,10 +57,13 @@ public class SavePrefs : MonoBehaviour
         PlayerPrefs.DeleteAll();
         ui.intToSave = 0;
         ui.floatToSave = 0.0f;
-        ui.dataText.text = "Your number is " + ui.intToSave.ToString();
+        ui.userName.text = "";
+        ui.dataText.text = "Please enter your information! "; 
+        //+ ui.intToSave.ToString();
 
         ui.intSlider.value = ui.intToSave;
         ui.floatSlider.value = ui.floatToSave;
+        ui.userName.text = ui.stringToSave;
     }
 
 }
