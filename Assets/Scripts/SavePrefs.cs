@@ -4,9 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class PlayerPrefs : MonoBehaviour
+public class SavePrefs : MonoBehaviour
 {
     DataCollection ui;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -16,14 +18,14 @@ public class PlayerPrefs : MonoBehaviour
 
     public void SaveGame()
     {
-        intToSave = Mathf.RoundToInt(ui.intSlider.value);
-        floatToSave = ui.floatSlider.value;
-        stringToSave = ui.nameString.text;
+        ui.intToSave = Mathf.RoundToInt(ui.intSlider.value);
+        ui.floatToSave = ui.floatSlider.value;
+        ui.stringToSave = ui.userName.text;
         PlayerPrefs.SetInt("SavedInteger", ui.intToSave);
         PlayerPrefs.SetFloat("SavedFloat", ui.floatToSave);
         PlayerPrefs.SetString("SavedString", ui.stringToSave);
         PlayerPrefs.Save();
-        ui.dataText.text = "Your number is ", + ui.intToSave.ToString();
+        ui.dataText.text = "Your number is " + ui.intToSave.ToString();
         Debug.Log("Game data saved!");
 
     }
@@ -38,13 +40,17 @@ public class PlayerPrefs : MonoBehaviour
                 ui.stringToSave = PlayerPrefs.GetString("SavedString");
 
                 ui.dataText.text = "Hello" + ui.stringToSave + ". Your integer was " + ui.intToSave.ToString() + "and your float was " + ui.floatToSave.ToString();
-                intSlider.value = (float)intToSave;
-                floatSlider.value = floatToSave;
+                ui.intSlider.value = (float)ui.intToSave;
+                ui.floatSlider.value = ui.floatToSave;
 
                 Debug.Log("Game data loaded!");
-            } else { Debug.LogError("There is no saved data!"); }
-
+            }
         }
+        else
+        {
+            Debug.LogError("There is no saved data!");
+        }
+
 
     }
     public void ResetData()
@@ -54,8 +60,8 @@ public class PlayerPrefs : MonoBehaviour
         ui.floatToSave = 0.0f;
         ui.dataText.text = "Your number is " + ui.intToSave.ToString();
 
-        intSlider.value = (float)intToSave;
-        floatSlider.value = floatToSave;
+        ui.intSlider.value = ui.intToSave;
+        ui.floatSlider.value = ui.floatToSave;
     }
 
 }

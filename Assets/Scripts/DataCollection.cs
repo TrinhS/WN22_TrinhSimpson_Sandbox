@@ -12,7 +12,7 @@ public class DataCollection : MonoBehaviour
 
     public Slider intSlider, floatSlider;
 
-    public TMP_InputField name;
+    public TMP_InputField userName;
 
     public TextMeshProUGUI floatText;
     public TextMeshProUGUI intText;
