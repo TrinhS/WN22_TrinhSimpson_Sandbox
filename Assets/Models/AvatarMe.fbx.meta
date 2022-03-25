@@ -3,12 +3,57 @@ guid: 4778469e413d6264097ae763501681df
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wolf3D_Body.001
+    second: {fileID: 2100000, guid: 5c2dd10ce1e170d4cbb1e2d865442e10, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wolf3D_Eye.001
+    second: {fileID: 2100000, guid: 99a3c095f74765146a45606fb57e8102, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wolf3D_Glasses.001
+    second: {fileID: 2100000, guid: 05a621b9997911f44b930ec4e405038b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wolf3D_Hair.001
+    second: {fileID: 2100000, guid: 68a25b21a0a03824f9688b603f77aa66, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wolf3D_Outfit_Bottom.001
+    second: {fileID: 2100000, guid: 90a176a55f6f5d2458e4be292445b554, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wolf3D_Outfit_Footwear.001
+    second: {fileID: 2100000, guid: d955e19afb28efd48900ea4081a32914, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wolf3D_Outfit_Top.001
+    second: {fileID: 2100000, guid: 515791b5b3505d84089fff3369ac1dd8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wolf3D_Skin.001
+    second: {fileID: 2100000, guid: 8f72abefd716bab4b95417aa7d975b39, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wolf3D_Teeth.001
+    second: {fileID: 2100000, guid: 4c9d087986963bc47bfd80e2f8110579, type: 2}
   materials:
-    materialImportMode: 2
+    materialImportMode: 1
     materialName: 0
-    materialSearch: 1
-    materialLocation: 1
+    materialSearch: 0
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
