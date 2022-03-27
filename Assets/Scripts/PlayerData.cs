@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerData : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int intToSave;
+    public string stringToSave;
 
-    // Update is called once per frame
-    void Update()
+    public Slider intSlider;
+
+    public TextMeshProUGUI intText;
+    public TextMeshProUGUI introText;
+
+    public void ChangeSlider()
     {
-        
+        intToSave = Mathf.RoundToInt(intSlider.value);
+        intText.text = intToSave.ToString();
     }
 }
