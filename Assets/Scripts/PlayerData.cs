@@ -8,6 +8,7 @@ public class PlayerData : MonoBehaviour
 {
     public int intToSave;
     public string stringToSave;
+    public int boolToSave;
 
     public Slider intSlider;
 

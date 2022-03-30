@@ -7,6 +7,7 @@ using TMPro;
 public class SavePrefs : MonoBehaviour
 {
     DataCollection ui;
+    
 
 
 
@@ -14,6 +15,7 @@ public class SavePrefs : MonoBehaviour
     void Start()
     {
         ui = GetComponent<DataCollection>();
+       
     }
 
     public void SaveGame()
@@ -21,6 +23,7 @@ public class SavePrefs : MonoBehaviour
         ui.intToSave = Mathf.RoundToInt(ui.intSlider.value);
         ui.floatToSave = ui.floatSlider.value;
         ui.stringToSave = ui.userName.text;
+        
         PlayerPrefs.SetInt("SavedInteger", ui.intToSave);
         PlayerPrefs.SetFloat("SavedFloat", ui.floatToSave);
         PlayerPrefs.SetString("SavedString", ui.stringToSave);
