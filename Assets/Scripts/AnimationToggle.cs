@@ -11,7 +11,7 @@ public class AnimationToggle : MonoBehaviour
     public Animator animatorRe;
     public TextMeshProUGUI blueMessage;
     public TextMeshProUGUI greenMessage;
-    public string stringToSave;
+    public string stringToSaveG;
 
     public void GreenAnimator()
     {
@@ -19,7 +19,7 @@ public class AnimationToggle : MonoBehaviour
         {
             animatorEx.SetBool("WarmingUp", true);
             greenMessage.text = "You chose Green! Get ready for your adventure!";
-            stringToSave = greenMessage.text;
+            stringToSaveG = greenMessage.text;
 
         }
         else
@@ -34,11 +34,17 @@ public class AnimationToggle : MonoBehaviour
         {
             animatorRe.SetBool("KnockedOut", true);
             blueMessage.text = "You chose Blue! Night, Night!";
-            stringToSave = blueMessage.text;
+            stringToSaveG = blueMessage.text;
         }
         else
         {
             animatorRe.SetBool("KnockedOut", false);
         }
+    }
+
+    public void ClearTxtG()
+    {
+        greenMessage.text = "";
+
     }
 }

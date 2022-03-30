@@ -10,7 +10,7 @@ public class SaveData : MonoBehaviour
     PlayerData ui;
     AnimationToggle UI;
 
-    private void Start()
+    private void Awake()
     {
         ui = GetComponent<PlayerData>();
         UI = GetComponent<AnimationToggle>();
@@ -20,13 +20,13 @@ public class SaveData : MonoBehaviour
     {
         ui.intToSave = Mathf.RoundToInt(ui.intSlider.value);
         ui.stringToSave = ui.introText.text;
-        UI.stringToSave = UI.greenMessage.text;
-        UI.stringToSave = UI.blueMessage.text;
+        //UI.stringToSave = UI.greenMessage.text;
+        //UI.stringToSave = UI.blueMessage.text;
         PlayerPrefs.SetInt("SavedInteger", ui.intToSave);
         PlayerPrefs.SetString("SavedString", ui.stringToSave);
-        PlayerPrefs.SetString("SavedString", UI.stringToSave);
+        PlayerPrefs.SetString("SavedString", UI.stringToSaveG);
         PlayerPrefs.Save();
-        ui.introText.text = UI.stringToSave + "and on a scale of 1-10 on being adventurous, you selected " + ui.intToSave.ToString();
+        ui.introText.text = UI.stringToSaveG + "and on a scale of 1-10 on being adventurous, you selected " + ui.intToSave.ToString();
         Debug.Log("Game data saved!");
     }
 
@@ -45,7 +45,7 @@ public class SaveData : MonoBehaviour
         PlayerPrefs.DeleteAll();
         ui.intToSave = 0;
         ui.intText.text = "How adventurous are you?  Scale between 1-10" ;
-        UI.stringToSave = "";
+        UI.stringToSaveG = "";
 
         ui.intSlider.value = ui.intToSave;
 
