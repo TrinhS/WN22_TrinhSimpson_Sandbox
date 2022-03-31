@@ -18,8 +18,9 @@ public class AnimationToggle : MonoBehaviour
         if (!animatorEx.GetBool("WarmingUp"))
         {
             animatorEx.SetBool("WarmingUp", true);
-            greenMessage.text = "You chose Green! Get ready for your adventure!";
+            greenMessage.text = "You chose Green! Get ready for your adventure! Press the Yellow Button!";
             stringToSaveG = greenMessage.text;
+            blueMessage.text = "";
 
         }
         else
@@ -33,8 +34,9 @@ public class AnimationToggle : MonoBehaviour
         if (!animatorRe.GetBool("KnockedOut"))
         {
             animatorRe.SetBool("KnockedOut", true);
-            blueMessage.text = "You chose Blue! Night, Night!";
+            blueMessage.text = "You chose Blue! Night, Night! Press the Red Button";
             stringToSaveG = blueMessage.text;
+            greenMessage.text = "";
         }
         else
         {
@@ -46,5 +48,20 @@ public class AnimationToggle : MonoBehaviour
     {
         greenMessage.text = "";
 
+    }
+
+    public void ClearTxtB()
+    {
+        blueMessage.text = "";
+    }
+
+    public void DisableBlue()
+    {
+        animatorRe.SetBool("KnockedOut", false);
+    }
+
+    public void DisableGreen()
+    {
+        animatorEx.SetBool("WarmingUp", false);
     }
 }
