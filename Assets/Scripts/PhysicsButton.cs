@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class PhysicsButton : MonoBehaviour
 
@@ -47,14 +48,14 @@ public class PhysicsButton : MonoBehaviour
         return Mathf.Clamp(value, -1f, 1f);
     }
 
-    private void Pressed()
+    public void Pressed()
     {
         _isPressed = true;
         onPressed.Invoke();
         Debug.Log(message: "Pressed");
     }
 
-    private void Released()
+    public void Released()
     {
         _isPressed = false;
         onReleased.Invoke();
