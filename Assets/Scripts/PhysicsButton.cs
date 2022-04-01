@@ -34,6 +34,8 @@ public class PhysicsButton : MonoBehaviour
         {
             Released();
         }
+
+        //Debug.Log(GetValue());
     }
 
     private float GetValue()
@@ -45,7 +47,9 @@ public class PhysicsButton : MonoBehaviour
             value = 0;
         }
 
+        
         return Mathf.Clamp(value, -1f, 1f);
+        
     }
 
     public void Pressed()
@@ -60,5 +64,10 @@ public class PhysicsButton : MonoBehaviour
         _isPressed = false;
         onReleased.Invoke();
         Debug.Log(message: "Released");
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log(collision.gameObject.name);
     }
 }
