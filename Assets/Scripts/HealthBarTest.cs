@@ -8,12 +8,8 @@ public class HealthBarTest : MonoBehaviour
 {
     public TextMeshProUGUI healthText;
     public Material healthMaterial;
-    public Material dissolveMaterial;
     public string PropertyName;
 
-    public float GreenValue = 1;
-    public float YellowValue = 0.5f;
-    public float RedValue = 0;
 
     float health, maxHealth = 100;
 
@@ -35,7 +31,7 @@ public class HealthBarTest : MonoBehaviour
         }
 
         ColorChanger();
-        Dissolve();
+
     }
 
     public void Damage(float damagePoints)
@@ -62,10 +58,5 @@ public class HealthBarTest : MonoBehaviour
        
     }
 
-    public void Dissolve()
-    {
-        dissolveMaterial.SetFloat(PropertyName, MixValue);
 
-        MixValue = health / maxHealth;
-    }
 }
