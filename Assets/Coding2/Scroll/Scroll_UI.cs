@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class Scroll_UI : MonoBehaviour
 {
@@ -57,6 +58,11 @@ public class Scroll_UI : MonoBehaviour
     public void Unhide()
     {
         Close();
+    }
+
+    public void OnApplicationQuit()
+    {
+        EditorApplication.isPlaying = false;
     }
 }
 
