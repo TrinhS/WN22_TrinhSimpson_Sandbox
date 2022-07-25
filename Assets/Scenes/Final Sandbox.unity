@@ -218,6 +218,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 343241796}
+        m_TargetAssemblyTypeName: HealthBarTest, Assembly-CSharp
+        m_MethodName: Damage
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 10
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &73304440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,7 +287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthText: {fileID: 1614792851}
   healthMaterial: {fileID: 2100000, guid: 750c109fd56a30f4982a1fd289b2a542, type: 2}
-  PropertyName: Dissolve_Value
+  PropertyName: BlendAmount
 --- !u!1 &530907777
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,6 +372,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1932734272}
+        m_TargetAssemblyTypeName: HealthBarTest, Assembly-CSharp
+        m_MethodName: Heal
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 10
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 343241796}
         m_TargetAssemblyTypeName: HealthBarTest, Assembly-CSharp
         m_MethodName: Heal
         m_Mode: 4

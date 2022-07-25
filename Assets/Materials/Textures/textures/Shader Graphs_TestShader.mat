@@ -36,7 +36,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - BlendAmount: 0.8
+    - BlendAmount: 1
     - Boolean_397d7dd4afa0416b93c1c4d02f2baf23: 1
     m_Colors:
     - Color_57717566173a4fa8bdffda15e1c486b7: {r: 0.33018863, g: 0.04205232, b: 0.26269466, a: 0}
